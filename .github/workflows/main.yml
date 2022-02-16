@@ -31,6 +31,7 @@ jobs:
           key: ${{ secrets.KEY_ED25519 }}
           port: ${{ secrets.PORT }}
           script: |
+            bash
             if [[ ! -e Projects/shwitter ]]
             then
               mkdir Projects
