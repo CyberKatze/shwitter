@@ -28,9 +28,15 @@ jobs:
           key: ${{ secrets.KEY_ED25519 }}
           port: ${{ secrets.PORT }}
           script: |
-            cd Projects/shwitter
-            git fetch origin main
-            git reset --hard origin/main
-            docker compose -f docker-compose.prod.yml up --build -d
+            echo "hello"
+            # if [[ ! -e Projects/shwitter ]]
+            # then
+            #   mkdir Projects
+            #   git clone https://github.com/m3dsh/shwitter Projects/shwitter
+            # fi
+            # cd Projects/shwitter
+            # git fetch origin main
+            # git reset --hard origin/main
+            # docker compose -f docker-compose.prod.yml up --build -d
 
 
