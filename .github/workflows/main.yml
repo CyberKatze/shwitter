@@ -16,9 +16,17 @@ jobs:
     # The type of runner that the job will run on
     name: Build
     runs-on: ubuntu-latest
+    env:
+      key1: ${{secrets.PORT}}
+
+    steps:
+      - name: ddd
+      - uses: actions/checkout@v2
+      - run: echo $key1
+        if: ${{env.PORT}} == '2222'
+
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
