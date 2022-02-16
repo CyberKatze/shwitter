@@ -42,7 +42,7 @@ const MobileNav: FC<MobileNavProps> = ({ className }) => {
         </h2>
       </Link>
       <a
-        href="https://github.com/m3hransh/shwitter"
+        href="https://github.com/m3dsh/shwitter"
         className=" p-2 bg-background-900"
       >
         <h2>

@@ -41,6 +41,7 @@ type Query {
   allUsers(data: FilterInputType): AllUsers!
   feed(filter: String, orderBy: [ShweetOrderByInput!], skip: Int, take: Int): Feed!
   me: User
+  user: User
 }
 
 type Mutation {
