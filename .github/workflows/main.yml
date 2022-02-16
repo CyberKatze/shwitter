@@ -31,12 +31,10 @@ jobs:
           key: ${{ secrets.KEY_ED25519 }}
           port: ${{ secrets.PORT }}
           script: |
-            bash
-            if [[ ! -e Projects/shwitter ]]
-            then
+            if test ! -e Projects/shwitter 
               mkdir Projects
               git clone https://github.com/m3dsh/shwitter Projects/shwitter
-            fi
+            end
             cd Projects/shwitter
             git fetch origin main
             git reset --hard origin/main
