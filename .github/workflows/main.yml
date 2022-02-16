@@ -29,17 +29,16 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY_ED25519 }}
-          port: 2222
+          port: ${{ secrets.PORT }}
           script: |
-            echo "hello"
-            # if [[ ! -e Projects/shwitter ]]
-            # then
-            #   mkdir Projects
-            #   git clone https://github.com/m3dsh/shwitter Projects/shwitter
-            # fi
-            # cd Projects/shwitter
-            # git fetch origin main
-            # git reset --hard origin/main
-            # docker compose -f docker-compose.prod.yml up --build -d
+            if [[ ! -e Projects/shwitter ]]
+            then
+              mkdir Projects
+              git clone https://github.com/m3dsh/shwitter Projects/shwitter
+            fi
+            cd Projects/shwitter
+            git fetch origin main
+            git reset --hard origin/main
+            docker compose -f docker-compose.prod.yml up --build -d
 
 
