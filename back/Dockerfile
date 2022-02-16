@@ -2,7 +2,7 @@ FROM node:16-alpine
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json ./
-RUN yarn install --frozen-lockfile
+RUN yarn install 
 COPY commands.sh /scripts/commands.sh
 COPY ./prisma .env ./
 RUN ["chmod", "+x", "/scripts/commands.sh"]
