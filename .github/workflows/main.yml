@@ -20,20 +20,16 @@ jobs:
       key1: ${{secrets.PORT}}
 
     steps:
-      - name: ddd
-        run: echo $key1
-        if: ${{env.PORT}} == '2222'
-
-
     # Steps represent a sequence of tasks that will be executed as part of the job
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: executing remote ssh commands using ssh key
+                
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY_ED25519 }}
-          port: ${{ secrets.PORT }}
+          port: 2222
           script: |
             echo "hello"
             # if [[ ! -e Projects/shwitter ]]
