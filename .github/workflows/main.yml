@@ -21,8 +21,7 @@ jobs:
 
     steps:
       - name: ddd
-      - uses: actions/checkout@v2
-      - run: echo $key1
+        run: echo $key1
         if: ${{env.PORT}} == '2222'
 
 
